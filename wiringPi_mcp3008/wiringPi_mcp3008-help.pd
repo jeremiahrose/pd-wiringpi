@@ -1,0 +1,114 @@
+#N canvas 550 199 454 459 10;
+#X obj -6 -38 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -79 -46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg -29 22 setup_wiringPi;
+#X obj -80 103 unpack f f f f f f f f;
+#X obj -96 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -70 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -44 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj -18 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 7 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 33 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 59 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 85 158 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 82 -8 2 once creation args in main object are specified \,
+click on this message to enable the adcs., f 28;
+#X text 21 382 Jaime Oliver La Rosa - 2014 (la.rosa@nyu.edu);
+#X text 118 72 1 args are (spi_port \, No. of ADCs to read). Once you
+run setup_wiringPi you can't change these numbers or it'll crash when
+you run the setup message again. *, f 27;
+#X text 149 178 0 For this object to work you must have wiringPi installed
+in your pi \, then run "sudo gpio load spi"., f 26;
+#X text 20 -39 3 bang to outout a list of values;
+#X text -100 319 This object uses the wiringPi library. For more information
+see: http://www.wiringpi.com, f 38;
+#X obj -80 -25 metro 5;
+#X obj -80 75 wiringPi_mcp3008 0 8;
+#N canvas 2 52 694 464 two 1;
+#X obj 101 4 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X msg 186 32 setup_wiringPi;
+#X obj -19 148 unpack f f f f f f f f;
+#X obj -35 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6319 1;
+#X obj -9 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6158 1;
+#X obj 17 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6468 1;
+#X obj 43 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6269 1;
+#X obj 68 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6145 1;
+#X obj 94 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6381 1;
+#X obj 120 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6282 1;
+#X obj 146 203 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6468 1;
+#X obj 100 25 metro 5;
+#X obj -19 120 wiringPi_mcp3008 0 8;
+#X obj 203 149 unpack f f f f f f f f;
+#X obj 187 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6108 1;
+#X obj 213 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 161 1;
+#X obj 239 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 211 1;
+#X obj 265 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 286 1;
+#X obj 290 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 472 1;
+#X obj 316 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 633 1;
+#X obj 342 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 646 1;
+#X obj 368 204 vsl 15 128 0 1023 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 161 1;
+#X obj 203 121 wiringPi_mcp3008 1 8;
+#X connect 0 0 11 0;
+#X connect 1 0 12 0;
+#X connect 1 0 22 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 2 2 5 0;
+#X connect 2 3 6 0;
+#X connect 2 4 7 0;
+#X connect 2 5 8 0;
+#X connect 2 6 9 0;
+#X connect 2 7 10 0;
+#X connect 11 0 12 0;
+#X connect 11 0 22 0;
+#X connect 12 0 2 0;
+#X connect 13 0 14 0;
+#X connect 13 1 15 0;
+#X connect 13 2 16 0;
+#X connect 13 3 17 0;
+#X connect 13 4 18 0;
+#X connect 13 5 19 0;
+#X connect 13 6 20 0;
+#X connect 13 7 21 0;
+#X connect 22 0 13 0;
+#X restore 170 263 pd two mcp3008s;
+#X connect 0 0 19 0;
+#X connect 1 0 18 0;
+#X connect 2 0 19 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 7 0;
+#X connect 3 4 8 0;
+#X connect 3 5 9 0;
+#X connect 3 6 10 0;
+#X connect 3 7 11 0;
+#X connect 18 0 19 0;
+#X connect 19 0 3 0;

@@ -1,0 +1,29 @@
+#N canvas 551 200 362 415 10;
+#X text -57 373 Jaime Oliver La Rosa - 2014 (la.rosa@nyu.edu);
+#X text -89 254 This object uses the wiringPi library. For more information
+see: http://www.wiringpi.com, f 38;
+#X obj -80 75 wiringPi_gpio 0 0 1;
+#X floatatom -80 54 5 0 0 0 - - -, f 5;
+#X text 63 59 args are (pin number \, mode (0=OUTPUT \, 1=INPUT) \,
+and default value, f 25;
+#X text -83 -16 In OUTPUT mode \, change the number box to send the
+value out the pin, f 27;
+#X obj -80 32 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text -88 303 pin numberings correspond to http://www.wiringpi.com/pins
+\, so pin 0 is gpio17, f 29;
+#X floatatom -80 223 5 0 0 0 - - -, f 5;
+#X obj -80 171 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj -80 201 wiringPi_gpio 1 1 0;
+#X obj -51 158 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text -83 110 In INPUT mode \, bang the object to see value on the
+pin, f 27;
+#X obj -51 178 metro 20;
+#X connect 3 0 2 0;
+#X connect 6 0 3 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 0;
+#X connect 11 0 13 0;
+#X connect 13 0 10 0;
